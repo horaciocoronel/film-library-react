@@ -5,6 +5,7 @@ class FilmListing extends Component {
     return (
 				 <div className="film-list">
 					 <h1 className="section-title">FILMS</h1>
+					 <h2>{this.props.films[1].title}</h2>
 				 </div>
     );
   }
