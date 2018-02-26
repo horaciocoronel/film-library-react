@@ -4,15 +4,19 @@ class FilmListing extends Component {
 	constructor() {
 		super();
 		this.handleFilterClick = this.handleFilterClick.bind(this);
+		this.state = {
+			filter: 'all'
+		}
 	}
 
-	handleFilterClick = (event, filter) => { console.log(`Setting filter to ${filter}`)};
+	handleFilterClick = (event, filter) => { this.setState({ filter: filter }) };
   render() {
     return (
 				 <div className="film-list">
 					 <h1 className="section-title">FILMS</h1>
 					 <div className="film-list-filters">
 					    <div className="film-list-filter" onClick={(e) => this.handleFilterClick(e, 'all')}>
+								{console.log(this.state.filter)}
 					      ALL
 					      <span className="section-count">{this.props.films.length}</span>
 					    </div>
