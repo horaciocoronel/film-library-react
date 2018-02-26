@@ -7,13 +7,15 @@ class Fave extends Component {
 		this.handleClick = this.handleClick.bind(this);
 
 		this.state = {
-			films: false
+			isfave: false
 		}
 	}
 
 	handleClick = (e) => {
 		e.stopPropagation();
-		console.log('handling Fave click!')
+		this.setState(prevState => ({
+			isfave: !prevState.isfave
+		}));
 	};
 
   render() {
