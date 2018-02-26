@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class Fave extends Component {
+	constructor() {
+		super();
+
+		this.handleClick = this.handleClick.bind(this);
+
+		this.state = {
+			films: false
+		}
+	}
+
 	handleClick = (e) => {
 		e.stopPropagation();
 		console.log('handling Fave click!')
