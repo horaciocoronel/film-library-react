@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Fave extends Component {
-	handleClick = (e) => {console.log('handling Fave click!');}
+	handleClick = (e) => {console.log('handling Fave click!')};
 
   render() {
 		return (
