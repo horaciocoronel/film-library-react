@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FilmListing extends Component {
+class FilmListing extends React.Component {
   render() {
     return (
 				 <div className="film-list">

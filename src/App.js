@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FilmListing from './FilmListing';
+import FilmDetails from './FilmDetails';
 import logo from './logo.svg';
 import './App.css';
 
