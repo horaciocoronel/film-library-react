@@ -6,7 +6,7 @@ class FilmListing extends Component {
     return (
 				 <div className="film-list">
 					 <h1 className="section-title">FILMS</h1>
-					 {this.props.films.map(movie =>  <FilmRow movie={movie} />
+					 {this.props.films.map(movie =>  <FilmRow movie={movie} key={movie.id} />
 				 )}
 				 </div>
     );
