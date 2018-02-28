@@ -6,11 +6,25 @@ import './App.css';
 import TMDB from './TMDB';
 
 class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			films: TMDB.films,
+			faves: [],
+			current: null
+		}
+	}
   render() {
     return (
 			<div className="film-library">
-				<FilmListing films={TMDB.films} />
-				<FilmDetails films={TMDB.films} />
+				<FilmListing
+					films={this.state.films}
+					faves={this.state.faves}
+				 />
+				<FilmDetails
+					films={TMDB.films}
+					film={this.state.current}
+				 />
 			 </div>
     );
   }
