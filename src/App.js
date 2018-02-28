@@ -24,7 +24,7 @@ class App extends Component {
 			console.log(`Adding ${film.title} to faves...`);
 			this.setState({faves});
 		} else {
-			faves.splice(1, film);
+			faves.splice(filmIndex, 1);
 			this.setState({faves});
 			console.log(`Removing ${film.title} from faves...`);
 		}
