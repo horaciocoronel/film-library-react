@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Fave from './Fave';
 
 class FilmRow extends Component {
-	handleDetailsClick = (e, film) => {console.log(`Fetching details for ${film.title}!`)}
+	handleDetailsClick = (e, film) => { this.props.film()}
   render() {
 			const release_date = new Date(this.props.movie.release_date)
 			const posterUrl = `https://image.tmdb.org/t/p/w780/${this.props.movie.poster_path}`;
@@ -18,7 +18,7 @@ class FilmRow extends Component {
 				 </div>
 				 <Fave
 					 onFaveToggle={this.props.onFaveToggle}
-					 isFave={this.props.isFave} 
+					 isFave={this.props.isFave}
 				 />
 			 </div>
 		 	)

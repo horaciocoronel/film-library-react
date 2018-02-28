@@ -30,6 +30,7 @@ class FilmListing extends Component {
 							movie={movie} key={movie.id}
 						 	onFaveToggle={() => this.props.onFaveToggle(movie)}
 							isFave={this.props.faves.includes(movie)}
+							film={() => this.props.film(movie)}
 						/>
 				 )}
 				 </div>

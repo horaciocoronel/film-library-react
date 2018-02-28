@@ -29,6 +29,10 @@ class App extends Component {
 			console.log(`Removing ${film.title} from faves...`);
 		}
 	}
+	currentMovie = (film) => {
+		// const currentFilm = this.state.current;
+		this.setState({current: film})
+	}
 
   render() {
     return (
@@ -37,7 +41,9 @@ class App extends Component {
 					films={this.state.films}
 					faves={this.state.faves}
 					onFaveToggle={this.handleFaveToggle}
+					film={this.currentMovie}
 				 />
+				 {console.log(this.state.current)}
 				<FilmDetails
 					films={TMDB.films}
 					film={this.state.current}
