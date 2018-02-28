@@ -25,7 +25,7 @@ class FilmListing extends Component {
 					      <span className="section-count">0</span>
 					    </div>
 					  </div>
-					 {this.props.films.map(movie =>  <FilmRow movie={movie} key={movie.id} />
+					 {this.props.films.map(movie =>  <FilmRow movie={movie} key={movie.id} onFaveToggle={() => this.props.onFaveToggle(movie)} />
 				 )}
 				 </div>
     );

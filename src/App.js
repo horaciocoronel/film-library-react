@@ -21,12 +21,12 @@ class App extends Component {
 		const filmIndex = faves.indexOf(film);
 		if(filmIndex === -1) {
 			faves.push(film);
-			console.log(`Adding ${film} to faves...`);
+			console.log(`Adding ${film.title} to faves...`);
 			this.setState({faves});
 		} else {
 			faves.splice(1, film);
 			this.setState({faves});
-			console.log(`Removing ${film} from faves...`);
+			console.log(`Removing ${film.title} from faves...`);
 		}
 	}
 
@@ -36,6 +36,7 @@ class App extends Component {
 				<FilmListing
 					films={this.state.films}
 					faves={this.state.faves}
+					onFaveToggle={this.handleFaveToggle}
 				 />
 				<FilmDetails
 					films={TMDB.films}
