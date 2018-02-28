@@ -6,8 +6,8 @@ import './App.css';
 import TMDB from './TMDB';
 
 class App extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			films: TMDB.films,
 			faves: [],
