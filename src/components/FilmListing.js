@@ -11,6 +11,10 @@ class FilmListing extends Component {
 
 	handleFilterClick = (event, filter) => { this.setState({ filter: filter }); };
   render() {
+		let films = this.props.films;
+		if(this.state.filter === 'faves') {
+			films = this.props.faves
+		}
     return (
 				 <div className="film-list">
 					 <h1 className="section-title">FILMS</h1>
@@ -25,9 +29,10 @@ class FilmListing extends Component {
 					      <span className="section-count">{this.props.faves.length}</span>
 					    </div>
 					  </div>
-					 {this.props.films.map(movie =>
+					 {films.map(movie =>
 						 <FilmRow
-							movie={movie} key={movie.id}
+							movie={movie}
+							key={movie.id}
 						 	onFaveToggle={() => this.props.onFaveToggle(movie)}
 							isFave={this.props.faves.includes(movie)}
 							film={() => this.props.film(movie)}
