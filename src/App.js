@@ -13,7 +13,23 @@ class App extends Component {
 			faves: [],
 			current: null
 		}
+		// binding functions
+		// this.handleFaveToggle = this.handleFaveToggle.bind(this);
 	}
+	handleFaveToggle = (film) => {
+		const faves = this.state.faves.slice();
+		const filmIndex = faves.indexOf(film);
+		if(filmIndex === -1) {
+			faves.push(film);
+			console.log(`Adding ${film} to faves...`);
+			this.setState({faves});
+		} else {
+			faves.splice(1, film);
+			this.setState({faves});
+			console.log(`Removing ${film} from faves...`);
+		}
+	}
+
   render() {
     return (
 			<div className="film-library">
