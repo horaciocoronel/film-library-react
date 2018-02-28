@@ -15,7 +15,7 @@ class App extends Component {
 		}
 		// binding functions
 		// this.handleFaveToggle = this.handleFaveToggle.bind(this);
-		this.currentMovie = this.currentMovie.bind(this);
+		// this.currentMovie = this.currentMovie.bind(this);
 	}
 	handleFaveToggle = (film) => {
 		const faves = this.state.faves.slice();
@@ -31,33 +31,13 @@ class App extends Component {
 		}
 	}
 	currentMovie = (film) => {
-		// const currentFilm = this.state.current;
 		const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_key}&append_to_response=videos,images&language=en`
 		fetch(url).then(response => {
 		  response.json().then(data => {
 				this.setState({current: data})
-		    console.log(data) // take a look at what we get back!
+		    // console.log(data)
 		  })
 		})
-
-		// this.setState({current: film});
-
-		console.log(this.state.current);
-		console.log('TEST');
-	}
-
-	handleDetailsClick = (e, film) => {
-		this.currentMovie(film);
-		console.log('AASFAFS SAFFS SAF')
-		// const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_key}&append_to_response=videos,images&language=en`
-		// fetch(url).then(response => {
-		//   response.json().then(data => {
-		//     // console.log(data) // take a look at what we get back!
-		// 		// this.setState({current: data});
-		// 		return data;
-		//   })
-		// })
-
 	}
 
   render() {
