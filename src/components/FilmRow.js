@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Fave from './Fave';
 
 class FilmRow extends Component {
-	handleDetailsClick = (e, film) => { this.props.film()}
+	handleDetailsClick = (e, film) => { this.props.currentMovie() }
   render() {
 			const release_date = new Date(this.props.movie.release_date)
 			const posterUrl = `https://image.tmdb.org/t/p/w780/${this.props.movie.poster_path}`;

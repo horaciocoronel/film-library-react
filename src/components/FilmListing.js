@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import FilmRow from './FilmRow';
 class FilmListing extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.handleFilterClick = this.handleFilterClick.bind(this);
 		this.state = {
 			filter: 'all'
 		}
 	}
 
-	handleFilterClick = (event, filter) => { this.setState({ filter: filter }); };
+	handleFilterClick = (event, filter) => {
+		this.setState({ filter: filter });
+	};
   render() {
 		let films = this.props.films;
 		if(this.state.filter === 'faves') {
@@ -35,7 +37,7 @@ class FilmListing extends Component {
 							key={movie.id}
 						 	onFaveToggle={() => this.props.onFaveToggle(movie)}
 							isFave={this.props.faves.includes(movie)}
-							film={() => this.props.film(movie)}
+							currentMovie={() => this.props.currentMovie(movie)}
 						/>
 				 )}
 				 </div>
