@@ -22,10 +22,15 @@ class FilmListing extends Component {
 					    <div className={`film-list-filter ${(this.state.filter === 'faves') ? 'is-active' : ''}`}
 									 onClick={(e) => this.handleFilterClick(e, 'faves')}>
 					      FAVES
-					      <span className="section-count">0</span>
+					      <span className="section-count">{this.props.faves.length}</span>
 					    </div>
 					  </div>
-					 {this.props.films.map(movie =>  <FilmRow movie={movie} key={movie.id} onFaveToggle={() => this.props.onFaveToggle(movie)} />
+					 {this.props.films.map(movie =>
+						 <FilmRow
+							movie={movie} key={movie.id}
+						 	onFaveToggle={() => this.props.onFaveToggle(movie)}
+							isFave={this.props.faves.includes(movie)}
+						/>
 				 )}
 				 </div>
     );
