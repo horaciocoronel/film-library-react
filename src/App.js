@@ -35,10 +35,20 @@ class App extends Component {
 		fetch(url).then(response => {
 		  response.json().then(data => {
 				this.setState({current: data})
+				// return data.results;
 		    // console.log(data)
 		  })
 		})
 	}
+
+	componentDidMount() {
+		const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB.api_key}&language=en`;
+    fetch(url)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ films: json.results });
+      });
+		}
 
   render() {
     return (
@@ -50,6 +60,7 @@ class App extends Component {
 					currentMovie={this.currentMovie}
 					handleDetailsClick={this.handleDetailsClick}
 				 />
+
 				<FilmDetails
 					films={TMDB.films}
 					currentMovie={this.state.current}
