@@ -1,3 +1,5 @@
+# Live Version
+http://film-library-react.s3-website.ca-central-1.amazonaws.com/
 # React Module Setup
 
 1. Verify that node v8.6.0 is installed (want to make sure we're all on the same version)
