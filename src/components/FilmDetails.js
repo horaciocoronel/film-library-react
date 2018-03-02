@@ -13,7 +13,6 @@ class FilmDetails extends Component {
 				    <img src={backdropUrl} alt="" />
 				    <h1 className="film-title">{props.currentMovie.title}</h1>
 				  </figure>
-
 				  <div className="film-meta">
 				    <h2 className="film-tagline">{props.currentMovie.tagline}</h2>
 				    <p className="film-detail-overview">
@@ -31,7 +30,7 @@ class FilmDetails extends Component {
 							    <span>No film selected</span>
 							  </p>
 							</div>
-		)}
+			)}
 	}
 
   render() {
